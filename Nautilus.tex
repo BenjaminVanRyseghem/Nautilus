@@ -40,9 +40,9 @@
 \chapter{Nautilus}
 
 
-\nautilus is a new browser made in top of Morphic. It was designed to browse \emph{Rpackage}, to be compatible with the RB refactoring engine, to be \emph{environment aware} and to work with Announcements.
+\nautilus is a new browser made on top of Morphic. It was designed to browse \emph{RPackage}, to be compatible with the RB refactoring engine, to be \emph{environment aware} and to work with Announcements.
 
-It quickly appeared a lot of needed features were missing in the currents browsers, so we decided to make it in one hand as simple as possible to be able to quickly extend it and on the other hand complete enough to have a really helpful environment.
+Quite a while ago it became obvious that a lot of needed features were missing in the current browsers. So we decided to make the new browser as simple as possible to extend and at the same time complete enough to become a really helpful environment.
 
 \begin{center}
 	\includegraphics[width=10cm]{figures/nautilus1}
@@ -52,35 +52,35 @@ It quickly appeared a lot of needed features were missing in the currents browse
 
 \section{Features}
 
-In this section, the main features of \nautilus will be explained even though there are a lot of little tricks which make \nautilus nice to work with.
+In this section the main features of \nautilus will be explained \ugh{even} though there are a lot of little tricks which make \nautilus nice to work with.
 
 \subsection*{RPackage}
 
-\emph{RPackage} is a real model for packages. So instead of having to parse Strings and so on, now you can manipulate real objects and query them about the system. \nautilus is the default browser to navigate through \emph{RPackages}.
+\emph{RPackage} is a \ugh{real} model for packages. So instead of having to parse Strings and so on, you can manipulate real objects and query them about the system. \nautilus is the default browser to navigate through \emph{RPackages}.
 
 \subsection*{Environment aware}
 
-We wanted \nautilus to be able to be easily plugged with the refactoring engine. In this way, we have made \nautilus totally dependent of an unique entry point which is an environment. So the whole system is queries through this entry point. It allows to browse specific environment as remote systems or different namespaces.
+We wanted \nautilus to be able to be easily connected with the refactoring engine. This way we made \nautilus totally dependent of a unique entry point which is an environment. So the whole system builds queries through this entry point. It enables browsing specific environments as remote systems or different name spaces.
 
 \subsection*{Ring}
 
-In the same logic, we have decided to make \nautilus \emph{Ring compliant}. This way, we ensure you can browse every different piece of code using the tool. In addition of the source code of the image, thanks to \emph{Ring} you can use \nautilus to browse change sets, slice, method references etc.
+Using the same logic we decided to make \nautilus \emph{Ring compliant}. This way we ensure that you can browse every piece of code using the tool. In addition to the sources in the image \nautilus together with \empph{Ring} can browse change sets, slice, method references etc.
 
 \subsection*{Announcements}
 
-Since \emph{Announcements} are used by \emph{RPackage} and should replace Events soon, we have choose to only use \emph{Announcements} in \nautilus. And it's used in the both way:
+Since \emph{Announcements} are used by \emph{RPackage} and should replace Events soon, we have choose to only use \emph{Announcements} in \nautilus. Currently the following \emph{Announcements} are generated:
 \begin{itemize}
-\item as input when the system is modified and notify the changes
-	\item as output when \nautilus emits its own changes (for plugins by example)
+    \item when the system is modified and notify the changes
+	\item when \nautilus emits its own changes (for plugins by example)
 \end{itemize}
 
 \subsection*{Groups}
 
-We have noticed than most of the time, when you are working, your modifications are focussed on 2 or 3 packages. And in the default browser, those packages are overflowed in the whole list of packages. So we have created groups to 
+We have noticed that most of the time when you are working your modifications are focussed on 2 or 3 packages. However in the default browser these packages are hidden in the list of all packages. Hence we have created groups to 
 \begin{itemize}
 	\item select only the packages you are interested in
-	\item join classes from different packages in an only holder
-	\item be able to hide the information irrelevant for your task.
+	\item join classes from different packages in single place
+	\item be able to hide the information irrelevant to your task.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=10cm]{figures/group1}
@@ -89,7 +89,7 @@ We have noticed than most of the time, when you are working, your modifications 
 
 \subsection*{Multi-Selections}
 
-We find out that most of the time, the actions you are doing when manipulating the infrastructure are the same for a set of objects. By example, when you are refactoring a class, you move a set of methods from a protocol to another. And this kind of example is relevant at different levels of the hierarchy. So we have implemented multi-selection lists to be able to do such manipulation at once.
+We found out that most of the time the actions you are doing when manipulating the infrastructure are the same for a set of objects. By example when you refactor a class, you move a set of methods from a protocol to another. And this kind of example is relevant at different levels of the hierarchy. Hence we implemented multi-selection lists to be able to do such manipulations at once.
 \begin{center}
 	\includegraphics[width=10cm]{figures/multiSelection1}
 	\label{fig:multiSelection1}
@@ -97,13 +97,13 @@ We find out that most of the time, the actions you are doing when manipulating t
 
 \subsection*{Shortcuts}
 
-Because we do not like to be forced to use the mouse to navigate through the browser while coding, and because it breaks the working flow, a lots of shortcuts have been implemented to increase the efficiency of the developer while using \nautilus.
+Because we do not want to be forced to use the mouse to navigate through the browser while coding and because it breaks the working flow, a lot of shortcuts have been implemented to increase the efficiency of the developer while using \nautilus.
 
 The full list of shortcuts is available in the section~\ref{sec:shortcuts}. 
 
 \subsection*{Interactive Icons}
 
-We were looking for a way to provide more information about the different structures. Then we realized that icons on list's elements could provide those information in a glance. Thanks to that, you can instantly know that the method you are reading come from a trait by example, or that it's overriding a method from a superclass. And then we wanted to go further by providing an interaction with the icons. So most of the icons can be clicked. 
+We were looking for a way to provide more information about the different structures. Then we realized that icons on list elements could provide those information at a glance. Thanks to that, you can instantly know that the method you are reading comes from a trait. Or that it is overriding a method from a superclass. And then we wanted to go further by providing an interaction with the icons, therefore most of the icons can be clicked. 
 
 See the section~\ref{sec:icons} for the complete list of icons.
 \begin{center}
@@ -114,9 +114,9 @@ See the section~\ref{sec:icons} for the complete list of icons.
 
 \subsection*{Plugins}
 
-One of our goal was that \nautilus could be easily extended. To reach this goal, we have implemented a plugin mechanism. Every external project can create a \emph{Nautilus-Plugin} and then the user can plugged it into his browser, or the project can register the plugin as a plugin to be loaded by default. 
+One of our goals was to make \nautilus easily extendable. To reach this goal we implemented a plugin mechanism. Every external project can create a \emph{Nautilus-Plugin} and then the user can plug it into his browser, or the project can register the plugin to be loaded by default. 
 
-Each plugin can have a graphical part included into \nautilus or not, and listen to \emph{Announcements} emitted by \nautilus.
+Each plugin can have an optional graphical part included into \nautilus and listen to \emph{Announcements} emitted by \nautilus.
 
 Read the section~\ref{sec:plugins} to learn how to create your own plugin.
 
@@ -136,7 +136,7 @@ Read the section~\ref{sec:plugins} to learn how to create your own plugin.
 
 \subsection*{Extendable menus}
 
-Always in the idea of being easily extendable, all the menu of \nautilus are defined using pragmas, which allow every external package to create an extension to add some entries in the wanted menu as long as he registers the method to the good pragma(s).
+Always with the idea of being easily extendable, all the menus of \nautilus are defined using pragmas. This allows every external package to create an extension possibly adding entries to menus as long as it links the method to the correct pragma(s).
 
 \section{Shortcuts}\label{sec:shortcuts}
 \subsection{Packages}
@@ -190,7 +190,12 @@ Shortcut & Effect & Selection\\
 
 \subsection{Groups}
 
-%	aCharacter == $b ifTrue: [ ^ self fullBrowse ].%	aCharacter == $B ifTrue: [ ^ self restrictedBrowseGroup: self selectedGroups ].%	aCharacter == $f ifTrue: [ ^ self findClass ].%	(aCharacter == $r and: [ self enableSingleMenuItems ]) ifTrue: [ ^ self renameGroup ].%	aCharacter == $t ifTrue: [ ^ self runTestsOfGroups: self selectedGroups ].%	aCharacter == $x ifTrue: [ ^ self removeGroup ].
+%	aCharacter == $b ifTrue: [ ^ self fullBrowse ].
+%	aCharacter == $B ifTrue: [ ^ self restrictedBrowseGroup: self selectedGroups ].
+%	aCharacter == $f ifTrue: [ ^ self findClass ].
+%	(aCharacter == $r and: [ self enableSingleMenuItems ]) ifTrue: [ ^ self renameGroup ].
+%	aCharacter == $t ifTrue: [ ^ self runTestsOfGroups: self selectedGroups ].
+%	aCharacter == $x ifTrue: [ ^ self removeGroup ].
 
 \begin{tabular}{l | l | l}
 Shortcut & Effect & Selection\\
@@ -384,40 +389,53 @@ Icon & Meaning & If clicked\\
 \end{tabular}
 
 
+
 \section{How to create Nautilus-Plugins}\label{sec:plugins}
 
-Here, we will give some brief explanations about how to create your own plugin.
-By the way, there is only two conditions to create a \emph{Nautilus-Plugin}:
+Here we will give some brief explanations on how to create your own plugin.
+By the way there are only two requirements to create a \emph{Nautilus-Plugin}:
 \begin{itemize}
-	\item the class should inherits from \verb?AbstractNautilusPlugin?
+	\item the class should inherit from \verb?AbstractNautilusPlugin?
 	\item it should implement \verb?#registerTo: aModel?
 \end{itemize}
+
 
 \subsection{Announcement subscription}
 
 The method \verb?#registerTo:? is used by the plugin to register itself to \verb?aModel? announcements.
 
 \begin{code}{Example of #registerTo:}
-MyPlugin>>#registerTo: aModel	aModel announcer		on: NautilusKeyPressed send: #keyPressed: to: self
+MyPlugin>>#registerTo: aModel
+
+	aModel announcer
+		on: NautilusKeyPressed send: #keyPressed: to: self
 \end{code}
 In this example, the instance of \verb?MyPlugin? subscribe themselves to \verb?NautilusKeyPressed?, and tell \emph{aModel's announcer} to send: \verb?#keyPressed? to the instance.
 
-So each time a key will be pressed in a Nautilus' window, the method \verb?keyPressed:? will be called.
+So each time a key will be pressed in a Nautilus window the method \verb?keyPressed:? will be called.
 
 \subsection{Display}
 
-If you want your plugin to add a a graphical widget into \nautilus, you should override the method \verb?display? and make it returns the \emph{Morphic} element you want \nautilus to displayed. By default, the method returns nil, to notify \nautilus not to display anything.
+If you want your plugin to add a graphical widget to \nautilus you should override the \verb?display? method. This method should return the \emph{Morphic} element you want \nautilus to display. By default the method returns nil to notify \nautilus not to display anything.
 
 \begin{code}{Example of #display}
-MyPlugin>>#display	morph :=  LabelMorph new 					contents: '';					enabled: false;					vResizing: #shrinkWrap;					hResizing: #spaceFill;					yourself.	^ morph
+MyPlugin>>#display
+
+	morph :=  LabelMorph new 
+					contents: '';
+					enabled: false;
+					vResizing: #shrinkWrap;
+					hResizing: #spaceFill;
+					yourself.
+	^ morph
 \end{code}
 
-You can also redefine on class side the methods:
+You can also redefine the following methods on the class side:
 \begin{itemize}
-	\item \verb?#defaultPosition? : to define the default position of the morph (it should be among \{\#top, \#middle, \#bottom, \#none\}). The default value is \#none.
-	\item \verb?#possiblePositions? : to answers a collection of the possible positions the widget could adopt.
+	\item \verb?#defaultPosition? : defines the default position of the morph (possible values are \{\#top, \#middle, \#bottom, \#none\}). The default value is \#none.
+	\item \verb?#possiblePositions? : answers a collection of the possible positions the widget could adopt.
 \end{itemize}
 
-And finally, you could redefine the method \verb?name? to change the name displayed in the \emph{Nautilus Plugin Manager}.
+And finally you could redefine the \verb?name? method to change the name displayed in the \emph{Nautilus Plugin Manager}.
 
 \end{document}
